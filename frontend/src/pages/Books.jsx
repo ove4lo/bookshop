@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 export const Books = () => {
     const [books, setBooks] = useState([])
@@ -16,8 +17,6 @@ export const Books = () => {
         fetchAllBooks();
     }, []);
 
-    console.log(books);
-
     return (
         <div>
             <h1>BOOKSHOP</h1>
@@ -30,6 +29,12 @@ export const Books = () => {
                     </div>
                 ))}
             </div>
+
+            <button className="addHome">
+                <Link to="/add" style={{ color: "inherit", textDecoration: "none" }}>
+                    Add new book
+                </Link>
+            </button>
         </div>
     )
 }
